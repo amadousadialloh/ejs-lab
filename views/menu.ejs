@@ -11,8 +11,8 @@
     <% menu.forEach(item => { %>
     <ul>
       <li>
-        <%= item.name %> <%= item.price %> <%= item.rating %> <%= item.details
-        %>
+        <%= item.rating === 5 ? item.name + "⭐" : item.name %> <%= item.price
+        %> <%= item.rating %> <%= item.details %>
       </li>
     </ul>
     <% }); %>
