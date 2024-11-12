@@ -70,4 +70,12 @@ app.get("/menu", (req, res) => {
   });
 });
 
+app.get("/menu/:category", (req, res) => {
+  const menuCategory = req.params.category.toLocaleLowerCase();
+  res.render("category.ejs", {
+    categoryName: menuCategory,
+    menuItems: RESTAURANT.menu.filter((item) => item.category === menuCategory),
+  });
+});
+
 app.listen(3000);
